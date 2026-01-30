@@ -1,0 +1,226 @@
+\documentclass[]{jlreq}
+\usepackage{tikz,amsfonts}
+
+\usetikzlibrary{calc,arrows.meta,bending,positioning,decorations.pathreplacing}
+
+\begin{document}
+\begin{tikzpicture}[baseline={(0,-1.6)}]
+		\node[font=\Large,align=center,red] (textbox) {$入力テープとスタックの$\\$文字一致したらpop．\space\sigma_{n-1}まで一致$};
+\draw[-{Stealth[length=3mm]},red,very thick] let \p1=(textbox.north west),\p2=(textbox.north east) in (\x1,\y1+10)-- (\x2,\y2+10);
+\end{tikzpicture}
+	\begin{tikzpicture}[remember picture]
+				% Specify the positions of the vertices:
+			\coordinate (0A0) at (0.0, 0+-0.0, 0);
+			\coordinate (0B0) at (0.0, 1.0+-0.0, 0);
+			\coordinate (0A1) at (1.0, 0+-0.0, 0);
+			\coordinate (0B1) at (1.0, 1.0+-0.0, 0);
+			\coordinate (0A2) at (2.0, 0+-0.0, 0);
+			\coordinate (0B2) at (2.0, 1.0+-0.0, 0);
+			\coordinate (0A3) at (3.0, 0+-0.0, 0);
+			\coordinate (0B3) at (3.0, 1.0+-0.0, 0);
+			\coordinate (0A4) at (4.0, 0+-0.0, 0);
+			\coordinate (0B4) at (4.0, 1.0+-0.0, 0);
+			\coordinate (0A5) at (5.0, 0+-0.0, 0);
+			\coordinate (0B5) at (5.0, 1.0+-0.0, 0);
+			\coordinate (0A6) at (6.0, 0+-0.0, 0);
+			\coordinate (0B6) at (6.0, 1.0+-0.0, 0);
+			\coordinate (0A7) at (7.0, 0+-0.0, 0);
+			\coordinate (0B7) at (7.0, 1.0+-0.0, 0);
+			\coordinate (0A8) at (8.0, 0+-0.0, 0);
+			\coordinate (0B8) at (8.0, 1.0+-0.0, 0);
+			% Specify the position of the characters:
+			\coordinate (0C0) at(0.5, 0.5+-0.0, 0);
+			\node at (0C0) {$\sigma_1$};
+			\coordinate (0C1) at(1.5, 0.5+-0.0, 0);
+			\node at (0C1) {$\sigma_2$};
+			\coordinate (0C2) at(2.5, 0.5+-0.0, 0);
+			\node at (0C2) {$\cdots$};
+			\coordinate (0C3) at(3.5, 0.5+-0.0, 0);
+			\node at (0C3) {$\sigma_{n-1}$};
+			\coordinate (0C4) at(4.5, 0.5+-0.0, 0);
+			\node at (0C4) {$\sigma_n$};
+			% Draw vertical edges:
+			\draw (0B0) -- (0A0);
+			\draw (0B1) -- (0A1);
+			\draw (0B2) -- (0A2);
+			\draw (0B3) -- (0A3);
+			\draw (0B4) -- (0A4);
+			\draw (0B5) -- (0A5);
+			% Draw horizontal edges:
+			\draw (0A0) -- (0A5);
+			\draw (0B0) -- (0B5);
+			% Draw ultra-thick grid at head's position:
+			\draw[ultra thick] (0B4) --(0A4)-- (0A5) --(0B5) -- cycle;
+			% Specify the positions of the vertices:
+			\coordinate (1A0) at (0.0, 0+-3.5, 0);
+			\coordinate (1B0) at (0.0, 1.0+-3.5, 0);
+			\coordinate (1A1) at (1.0, 0+-3.5, 0);
+			\coordinate (1B1) at (1.0, 1.0+-3.5, 0);
+			\coordinate (1A2) at (2.0, 0+-3.5, 0);
+			\coordinate (1B2) at (2.0, 1.0+-3.5, 0);
+			\coordinate (1A3) at (3.0, 0+-3.5, 0);
+			\coordinate (1B3) at (3.0, 1.0+-3.5, 0);
+			\coordinate (1A4) at (4.0, 0+-3.5, 0);
+			\coordinate (1B4) at (4.0, 1.0+-3.5, 0);
+			\coordinate (1A5) at (5.0, 0+-3.5, 0);
+			\coordinate (1B5) at (5.0, 1.0+-3.5, 0);
+			\coordinate (1A6) at (6.0, 0+-3.5, 0);
+			\coordinate (1B6) at (6.0, 1.0+-3.5, 0);
+			\coordinate (1A7) at (7.0, 0+-3.5, 0);
+			\coordinate (1B7) at (7.0, 1.0+-3.5, 0);
+			\coordinate (1A8) at (8.0, 0+-3.5, 0);
+			\coordinate (1B8) at (8.0, 1.0+-3.5, 0);
+			\coordinate (1A9) at (9.0, 0+-3.5, 0);
+			\coordinate (1B9) at (9.0, 1.0+-3.5, 0);
+			\coordinate (1A10) at (10.0, 0+-3.5, 0);
+			\coordinate (1B10) at (10.0, 1.0+-3.5, 0);
+			% Specify the position of the characters:
+			\coordinate (1C0) at(0.5, 0.5+-3.5, 0);
+			\node at (1C0) {$▷$};
+			\coordinate (1C1) at(1.5, 0.5+-3.5, 0);
+			\node at (1C1) {$\space$};
+			\coordinate (1C2) at(2.5, 0.5+-3.5, 0);
+			\node at (1C2) {$\space$};
+			\coordinate (1C3) at(3.5, 0.5+-3.5, 0);
+			\node at (1C3) {$\space$};
+			\coordinate (1C4) at(4.5, 0.5+-3.5, 0);
+			\node at (1C4) {$\space$};
+			\coordinate (1C5) at(5.5, 0.5+-3.5, 0);
+			\node at (1C5) {$\space$};
+			\coordinate (1C6) at(6.5, 0.5+-3.5, 0);
+			\node at (1C6) {$\space$};
+			\coordinate (1E) at(8.0, 0.5+-3.5, 0);
+			\node at (1E) {$ \cdots $};
+			% Draw vertical edges:
+			\draw (1B0) -- (1A0);
+			\draw (1B1) -- (1A1);
+			\draw (1B2) -- (1A2);
+			\draw (1B3) -- (1A3);
+			\draw (1B4) -- (1A4);
+			\draw (1B5) -- (1A5);
+			\draw (1B6) -- (1A6);
+			\draw (1B7) -- (1A7);
+			% Draw horizontal edges:
+			\draw (1A0) -- (1A8);
+			\draw (1B0) -- (1B8);
+			% Draw ultra-thick grid at head's position:
+			\draw[ultra thick] (1B0) --(1A0)-- (1A1) --(1B1) -- cycle;
+			\node [below=0.3 of 0C4] (regTo1) {};
+			\node [above=0.3 of 1C0] (r2) {};
+			\node [above=-0.28 of r2] (regTo2) {};
+			\node[below=0.85 of regTo1,draw=black,rectangle] (reg) {$q_{pop}$};
+			\node[above=0.3 of regTo2] (stor2) {};
+			\draw [-{Stealth[length=2mm]}] (reg.north) -- (regTo1);
+			\draw [-{Stealth[length=2mm]}] let \p1 = (reg.south),\p2 = (stor2.center) in (reg.south) -- (\x1,\y2) -- (stor2.center) -- (regTo2);
+		\end{tikzpicture}
+	\begin{tikzpicture}[baseline={(0,-1.6)}]
+		\node[font=\Large,align=center,red] (textbox) {$入力テープとスタックの$\\$文字一致したらpop．\space\sigma_n一致$};
+\draw[-{Stealth[length=3mm]},red,very thick] let \p1=(textbox.north west),\p2=(textbox.north east) in (\x1,\y1+10)-- (\x2,\y2+10);
+\end{tikzpicture}
+	\begin{tikzpicture}[remember picture]
+				% Specify the positions of the vertices:
+			\coordinate (0A0) at (0.0, 0+-0.0, 0);
+			\coordinate (0B0) at (0.0, 1.0+-0.0, 0);
+			\coordinate (0A1) at (1.0, 0+-0.0, 0);
+			\coordinate (0B1) at (1.0, 1.0+-0.0, 0);
+			\coordinate (0A2) at (2.0, 0+-0.0, 0);
+			\coordinate (0B2) at (2.0, 1.0+-0.0, 0);
+			\coordinate (0A3) at (3.0, 0+-0.0, 0);
+			\coordinate (0B3) at (3.0, 1.0+-0.0, 0);
+			\coordinate (0A4) at (4.0, 0+-0.0, 0);
+			\coordinate (0B4) at (4.0, 1.0+-0.0, 0);
+			\coordinate (0A5) at (5.0, 0+-0.0, 0);
+			\coordinate (0B5) at (5.0, 1.0+-0.0, 0);
+			\coordinate (0A6) at (6.0, 0+-0.0, 0);
+			\coordinate (0B6) at (6.0, 1.0+-0.0, 0);
+			\coordinate (0A7) at (7.0, 0+-0.0, 0);
+			\coordinate (0B7) at (7.0, 1.0+-0.0, 0);
+			\coordinate (0A8) at (8.0, 0+-0.0, 0);
+			\coordinate (0B8) at (8.0, 1.0+-0.0, 0);
+			% Specify the position of the characters:
+			\coordinate (0C0) at(0.5, 0.5+-0.0, 0);
+			\node at (0C0) {$\sigma_1$};
+			\coordinate (0C1) at(1.5, 0.5+-0.0, 0);
+			\node at (0C1) {$\sigma_2$};
+			\coordinate (0C2) at(2.5, 0.5+-0.0, 0);
+			\node at (0C2) {$\cdots$};
+			\coordinate (0C3) at(3.5, 0.5+-0.0, 0);
+			\node at (0C3) {$\sigma_{n-1}$};
+			\coordinate (0C4) at(4.5, 0.5+-0.0, 0);
+			\node at (0C4) {$\sigma_n$};
+			% Draw vertical edges:
+			\draw (0B0) -- (0A0);
+			\draw (0B1) -- (0A1);
+			\draw (0B2) -- (0A2);
+			\draw (0B3) -- (0A3);
+			\draw (0B4) -- (0A4);
+			\draw (0B5) -- (0A5);
+			% Draw horizontal edges:
+			\draw (0A0) -- (0A5);
+			\draw (0B0) -- (0B5);
+			% Draw ultra-thick grid at head's position:
+			\draw[ultra thick] (0B4) --(0A4)-- (0A5) --(0B5) -- cycle;
+			% Specify the positions of the vertices:
+			\coordinate (1A0) at (0.0, 0+-3.5, 0);
+			\coordinate (1B0) at (0.0, 1.0+-3.5, 0);
+			\coordinate (1A1) at (1.0, 0+-3.5, 0);
+			\coordinate (1B1) at (1.0, 1.0+-3.5, 0);
+			\coordinate (1A2) at (2.0, 0+-3.5, 0);
+			\coordinate (1B2) at (2.0, 1.0+-3.5, 0);
+			\coordinate (1A3) at (3.0, 0+-3.5, 0);
+			\coordinate (1B3) at (3.0, 1.0+-3.5, 0);
+			\coordinate (1A4) at (4.0, 0+-3.5, 0);
+			\coordinate (1B4) at (4.0, 1.0+-3.5, 0);
+			\coordinate (1A5) at (5.0, 0+-3.5, 0);
+			\coordinate (1B5) at (5.0, 1.0+-3.5, 0);
+			\coordinate (1A6) at (6.0, 0+-3.5, 0);
+			\coordinate (1B6) at (6.0, 1.0+-3.5, 0);
+			\coordinate (1A7) at (7.0, 0+-3.5, 0);
+			\coordinate (1B7) at (7.0, 1.0+-3.5, 0);
+			\coordinate (1A8) at (8.0, 0+-3.5, 0);
+			\coordinate (1B8) at (8.0, 1.0+-3.5, 0);
+			\coordinate (1A9) at (9.0, 0+-3.5, 0);
+			\coordinate (1B9) at (9.0, 1.0+-3.5, 0);
+			\coordinate (1A10) at (10.0, 0+-3.5, 0);
+			\coordinate (1B10) at (10.0, 1.0+-3.5, 0);
+			% Specify the position of the characters:
+			\coordinate (1C0) at(0.5, 0.5+-3.5, 0);
+			\node at (1C0) {$▷$};
+			\coordinate (1C1) at(1.5, 0.5+-3.5, 0);
+			\node at (1C1) {$\space$};
+			\coordinate (1C2) at(2.5, 0.5+-3.5, 0);
+			\node at (1C2) {$\space$};
+			\coordinate (1C3) at(3.5, 0.5+-3.5, 0);
+			\node at (1C3) {$\space$};
+			\coordinate (1C4) at(4.5, 0.5+-3.5, 0);
+			\node at (1C4) {$\space$};
+			\coordinate (1C5) at(5.5, 0.5+-3.5, 0);
+			\node at (1C5) {$\space$};
+			\coordinate (1C6) at(6.5, 0.5+-3.5, 0);
+			\node at (1C6) {$\space$};
+			\coordinate (1E) at(8.0, 0.5+-3.5, 0);
+			\node at (1E) {$ \cdots $};
+			% Draw vertical edges:
+			\draw (1B0) -- (1A0);
+			\draw (1B1) -- (1A1);
+			\draw (1B2) -- (1A2);
+			\draw (1B3) -- (1A3);
+			\draw (1B4) -- (1A4);
+			\draw (1B5) -- (1A5);
+			\draw (1B6) -- (1A6);
+			\draw (1B7) -- (1A7);
+			% Draw horizontal edges:
+			\draw (1A0) -- (1A8);
+			\draw (1B0) -- (1B8);
+			% Draw ultra-thick grid at head's position:
+			\draw[ultra thick] (1B0) --(1A0)-- (1A1) --(1B1) -- cycle;
+			\node [below=0.3 of 0C4] (regTo1) {};
+			\node [above=0.3 of 1C0] (r2) {};
+			\node [above=-0.28 of r2] (regTo2) {};
+			\node[below=0.85 of regTo1,draw=black,rectangle] (reg) {$q_{f}$};
+			\node[above=0.3 of regTo2] (stor2) {};
+			\draw [-{Stealth[length=2mm]}] (reg.north) -- (regTo1);
+			\draw [-{Stealth[length=2mm]}] let \p1 = (reg.south),\p2 = (stor2.center) in (reg.south) -- (\x1,\y2) -- (stor2.center) -- (regTo2);
+		\end{tikzpicture}
+	
+\end{document}
