@@ -24,8 +24,9 @@
 * python 3
 * Microsoft製 python vscode拡張機能
 * OSはなんでもいい
-### texツール
-* luatex
+* texlive
+### tex パッケージ：
+TLShell TeX Live Manager 等を使ってインストールできる。
 * tikz
 * unicode-math
 * amsfonts
